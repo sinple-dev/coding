@@ -13,44 +13,32 @@ public class Main {
 
         int cnt = in.nextInt();
 
-        while (0 < cnt--) {
-            int x1 = in.nextInt();
-            int y1 = in.nextInt();
-            int r1 = in.nextInt();
+        dp[0][0] = 1;	// N=0 일 때의 0 호출 횟수
+        dp[0][1] = 0;	// N=0 일 때의 1 호출 횟수
+        dp[1][0] = 0;	// N=1 일 때의 0 호출 횟수
+        dp[1][1] = 1;	// N=1 일 때의 1 호출 횟수
 
-            int x2 = in.nextInt();
-            int y2 = in.nextInt();
-            int r2 = in.nextInt();
-            bw.write(turret(x1, y1, r1, x2, y2, r2) + "\n");
+        while (0 < cnt--) {
+            int n = in.nextInt();
+
+            fibonacci(n);
+            bw.write((dp[n][0] + " " + dp[n][1]) + "\n");
         }
         bw.flush();
     }
 
-    public static int turret(int x1, int y1, int r1, int x2, int y2, int r2) {
+    static Integer[][] dp = new Integer[41][2];
 
-        int distance = (int) (Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 
-        if (x1 == x2 && y1 == y2 && r1 == r2) {
-            return -1;
+    static Integer[] fibonacci(int N) {
+        // N에 대한 0, 1의 호출 횟수가 없을 떄(탐색하지 않은 값일 때)
+        if(dp[N][0] == null || dp[N][1] == null) {
+            // 각 N에 대한 0 호출 횟수와 1 호출 횟수를 재귀호출한다.
+            dp[N][0] = fibonacci(N - 1)[0] + fibonacci(N - 2)[0];
+            dp[N][1] = fibonacci(N - 1)[1] + fibonacci(N - 2)[1];
         }
-        // 원이 밖에서 안만나는 경우
-        else if (distance > Math.pow(r1 + r2, 2)) {
-            return 0;
-        }
-        // 원이 안에서 서로 안만나는 경우
-        else if (distance < Math.pow(r2 - r1, 2)) {
-            return 0;
-        }
-        //      원이 밖에 있는 경우
-        else if (distance == Math.pow(r1 + r2, 2)) {
-            return 1;
-        }
-        else if (distance == Math.pow(r2 - r1, 2)) {
-            return 1;
-        }
-        else {
-            return 2;
-        }
+        // N에 대한 0과 1, 즉 [N][0]과 [N][1] 을 담고있는 [N]을 반환한다.
+        return dp[N];
+
     }
-
 }
