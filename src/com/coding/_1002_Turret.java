@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.Scanner;
 
-public class Turret {
+public class _1002_Turret {
 
     public static void Turret() throws IOException {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));

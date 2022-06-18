@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.Scanner;
 
-public class Main {
+public class _1004_Through {
 
     public static void main(String[] args) throws IOException {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -42,5 +42,10 @@ public class Main {
     }
 
     static boolean isThrough(int x1, int y1, int x, int y, int r) {
+        if (Math.pow(x - x1, 2) + Math.pow(y - y1, 2) < Math.pow(r, 2)) {
+            return true;
+        }else {
+            return false;
+        }
     }
 }
