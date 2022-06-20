@@ -1,46 +1,43 @@
 package com.coding;
 
-import java.io.BufferedWriter;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.PriorityQueue;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        Scanner in = new Scanner(System.in);
+        Main main = new Main();
+        int[] priorities = {2, 1, 3, 2};
+        main.solution(priorities, 2);
+    }
 
-        int cnt = in.nextInt();
 
-        while (0 < cnt--) {
+    public int solution(int[] priorities, int location) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+        int answer = 0;
 
-            int x1 = in.nextInt();
-            int y1 = in.nextInt();
-            int x2 = in.nextInt();
-            int y2 = in.nextInt();
+        for (int i = 0; i < priorities.length; i++) {
+            pq.add(priorities[i]);
+        }
 
-            int planet = in.nextInt();
-            int through = 0;
-
-            for(int i = 0; i < planet; i++) {
-                int x = in.nextInt();
-                int y = in.nextInt();
-                int r = in.nextInt();
-
-                boolean one = isThrough(x1, y1, x, y, r);
-                boolean two = isThrough(x2, y2, x, y, r);
-
-                if (one != two) {
-                    through++;
+        while (!pq.isEmpty()) {
+            for (int i = 0; i < priorities.length; i++) {
+                // 제일 우선순위 높은거 찾고
+                if (priorities[i] == pq.peek()) {
+                    // 찾은게 내가 찾고싶던 location의 값이면 리턴
+                    if (i == location) {
+                        answer++;
+                        return answer;
+                    }
+                    // 아니면 뽑아내고 answer 증가
+                    pq.poll();
+                    answer++;
                 }
             }
-
-            bw.write(through + "\n");
         }
-        bw.flush();
+        return -1;
     }
 
-    static boolean isThrough(int x1, int y1, int x, int y, int r) {
-    }
 }

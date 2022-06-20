@@ -1,4 +1,4 @@
-package com.coding;
+package com.coding.backjoon;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
