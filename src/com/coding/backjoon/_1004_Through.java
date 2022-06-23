@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class _1004_Through {
 
-    public static void main(String[] args) throws IOException {
+    public static void through() throws IOException {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         Scanner in = new Scanner(System.in);
 
