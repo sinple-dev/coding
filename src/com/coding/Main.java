@@ -1,45 +1,27 @@
 package com.coding;
 
+import com.coding.programmers.dfs_tickets;
+
 import java.io.IOException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
 
+
     public static void main(String[] args) throws IOException {
+
         Main main = new Main();
-        String[][] people = {{"ICN", "SFO"}, {"ICN", "ATL"}, {"SFO", "ATL"}, {"ATL", "ICN"}, {"ATL","SFO"}};
-        main.solution(people);
+        int[] numbers = {1,1,1,1,1};
+
+
+        System.out.println(main.solution(numbers, 3));
+
+
     }
 
-    boolean[] visited;
-    ArrayList<String> allRoute;
 
-    public String[] solution(String[][] tickets) {
-        String[] answer = {};
-        int cnt = 0;
-        visited = new boolean[tickets.length];
-        allRoute = new ArrayList<>();
 
-        dfs("ICN", "ICN", tickets, cnt);
 
-        Collections.sort(allRoute);
-        answer = allRoute.get(0).split(" ");
 
-        return answer;
-    }
-
-    public void dfs(String start, String route, String[][] tickets, int cnt){
-        if(cnt == tickets.length){
-            allRoute.add(route);
-            return;
-        }
-
-        for(int i=0; i<tickets.length; i++){
-            if(start.equals(tickets[i][0]) && !visited[i]){
-                visited[i] = true;
-                dfs(tickets[i][1], route+" "+tickets[i][1], tickets, cnt+1);
-                visited[i] = false;
-            }
-        }
-    }
 }
