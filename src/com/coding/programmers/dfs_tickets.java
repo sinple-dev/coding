@@ -1,12 +1,11 @@
 package com.coding.programmers;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
 public class dfs_tickets {
 
-    public static void dfs_tickets() throws IOException {
+    public static void dfs_tickets() {
         dfs_tickets main = new dfs_tickets();
         String[][] people = {{"ICN", "SFO"}, {"ICN", "ATL"}, {"SFO", "ATL"}, {"ATL", "ICN"}, {"ATL","SFO"}};
         main.solution(people);

@@ -1,14 +1,12 @@
 package com.coding.programmers;
 
-import com.coding.Main;
 
-import java.io.IOException;
 import java.util.Arrays;
 
 public class dp_triangle {
 
 
-    public static void dp_triangle(String[] args) throws IOException {
+    public static void dp_triangle(String[] args) {
 
         dp_triangle main = new dp_triangle();
         int[][] numbers = {{7}, {3, 8}, {8, 1, 0}, {2, 7, 4, 4}, {4, 5, 2, 6, 5}};

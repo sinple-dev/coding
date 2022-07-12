@@ -1,12 +1,11 @@
 package com.coding.programmers;
 
-import java.io.IOException;
 import java.util.Collections;
 import java.util.PriorityQueue;
 
 public class stack_printer {
 
-    public static void stack_printer() throws IOException {
+    public static void stack_printer() {
         stack_printer main = new stack_printer();
         int[] priorities = {2, 1, 3, 2};
         main.solution(priorities, 2);

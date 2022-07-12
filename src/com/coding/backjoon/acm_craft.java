@@ -1,4 +1,4 @@
-package com.coding.programmers;
+package com.coding.backjoon;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class acm_craft {
 
-    public static void stack_printer() throws IOException {
+    public static void stack_printer() {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         Scanner in = new Scanner(System.in);
 
