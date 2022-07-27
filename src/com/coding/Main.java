@@ -1,17 +1,19 @@
 package com.coding;
 
-
-import java.util.Arrays;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Stack;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         Main main = new Main();
-        int[][] dungeons = {{80,20}, {50,40}, {30,10}};
-        System.out.println(main.solution(80, dungeons));
 
     }
 
 
 }
+
+
