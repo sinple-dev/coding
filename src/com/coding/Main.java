@@ -2,61 +2,40 @@ package com.coding;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
         Main main = new Main();
-        main.solution("011");
+
+        main.solution(80, new int[][]{{80, 20}, {50, 40}, {30, 10}});
     }
 
-    boolean[] visited;
-    HashSet<Integer> map;
+    public int answer = 0;
+    public boolean[] visit;
 
-    public int solution(String numbers) {
+    public int solution(int k, int[][] dungeons) {
 
-        visited = new boolean[numbers.length()];
-        map = new HashSet<>();
+        visit = new boolean[dungeons.length];
 
-        backTracking(0, numbers, "");
+        dfs(0, k, dungeons);
 
-        return map.size();
+        return answer;
     }
 
-    public void backTracking(int depth, String numbers, String current) {
-        if (depth == numbers.length()) {
-            return;
-        }
+    public void dfs(int depth, int k, int[][] dungeons) {
 
-        for (int i=0; i< numbers.length(); i++) {
-            if (!visited[i]) {
-                visited[i] = true;
+        for (int i = 0; i < dungeons.length; i++) {
 
-                String tmp = current + numbers.charAt(i);
-
-                if (chk(Integer.parseInt(tmp))) {
-                    map.add(Integer.parseInt(tmp));
-                }
-
-                backTracking(depth+1, numbers, tmp);
-                visited[i] = false;
-
+            if (k >= dungeons[i][0] && !visit[i]) {
+                visit[i] = true;
+                dfs(depth+1, k - dungeons[i][1], dungeons);
+                visit[i] = false;
             }
-
         }
 
-    }
-    public boolean chk(int n) {
-        for (int i = 2; i <= n; i++) {
-            if (i != n && n % i == 0)
-                return false;
-        }
+        answer = Math.max(answer, depth);
 
-        if (n <= 1) return false;
-        return true;
     }
 
 
