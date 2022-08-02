@@ -1,0 +1,65 @@
+package com.coding.programmers;
+
+import java.util.Stack;
+
+public class full_search_wires {
+    public static void full_search_wires(String[] args) {
+        full_search_wires main = new full_search_wires();
+        int[][] wires = {{1, 3}, {2, 3}, {3, 4}, {4, 5}, {4, 6}, {4, 7}, {7, 8}, {7, 9}};
+        main.solution(9, wires);
+    }
+
+    boolean[] visit;
+    int[][] arr;
+
+    public int solution(int n, int[][] wires) {
+        int answer = 99;
+
+        arr = new int[n + 1][n + 1];
+        for (int i = 0; i < wires.length; i++) {
+            arr[wires[i][0]][wires[i][1]] = 1;
+            arr[wires[i][1]][wires[i][0]] = 1;
+        }
+
+        for (int i = 0; i < wires.length; i++) {
+
+            int topA = wires[i][0];
+            int topB = wires[i][1];
+
+            arr[topA][topB] = 0;
+            arr[topB][topA] = 0;
+
+            int cnt = dfs(n, topA);
+            answer = Math.min(answer, Math.abs(n - cnt - cnt));
+
+            arr[topA][topB] = 1;
+            arr[topB][topA] = 1;
+
+        }
+        return answer;
+    }
+
+    public int dfs(int n, int topA) {
+
+        Stack<Integer> stack = new Stack();
+        stack.push(topA);
+
+        visit = new boolean[n+1];
+        int cnt = 1;
+
+        while (!stack.empty()) {
+            int node = stack.pop();
+            visit[node] = true;
+
+            for (int i = 1; i <= n; i++) {
+                if (visit[i]) continue;
+                if (arr[node][i] == 1) {
+                    stack.push(i);
+                    cnt++;
+                }
+            }
+        }
+
+        return cnt;
+    }
+}
