@@ -1,16 +1,19 @@
 package com.coding;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.StringTokenizer;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
         Main main = new Main();
 
-        main.solution(2, new String[]{"N~F=0", "R~T>2"});
+        main.solution(new String[]{"Enter uid1234 Muzi", "Enter uid4567 Prodo", "Leave uid1234", "Enter uid1234 Prodo", "Change uid4567 Ryan"});
+
     }
-
-
 
 //    public int[] solution(int[][] data) {
 //
