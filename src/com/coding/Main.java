@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         Main main = new Main();
         System.out.println(
-                main.solution(118372)
+                main.solution(626331)
         );
     }
 
