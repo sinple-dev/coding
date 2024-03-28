@@ -3,7 +3,7 @@ package com.coding.backjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
+import java.util.Stack;
 import java.util.StringTokenizer;
 
 public class _10773_zero {
@@ -18,11 +18,11 @@ public class _10773_zero {
             zero[i] = Integer.parseInt(br.readLine());
         }
 
-        ArrayList<Integer> stack = new ArrayList<>();
+        Stack<Integer> stack = new Stack<>();
 
         for (int i =0; i < num; i++) {
             if (zero[i] == 0) {
-                stack.remove(stack.size() - 1);
+                stack.pop();
             } else {
                 stack.add(zero[i]);
             }
