@@ -16,11 +16,19 @@ public class _2941_croatia {
 
         String s = String.valueOf(st.nextToken());
 
-
         String[] croatia = {"c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="};
 
+        for (String c : croatia) {
+            while (true) {
+                if (s.contains(c)) {
+                    s = s.replace(c, " ");
+                } else {
+                    break;
+                }
+            }
+        }
 
-
+        System.out.println(s.length());
 
     }
 
