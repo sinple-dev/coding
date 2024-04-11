@@ -18,28 +18,24 @@ public class _15652_nm {
 
         dfs(n, m, 0);
 
-        System.out.print(sb);
     }
 
     static int[] arr;
     static boolean[] visit;
-    static StringBuilder sb = new StringBuilder();
 
     private static void dfs(int n, int m, int d) {
         if(d == m) {
-            if (arr[d-2] < arr[d-1]) {
-                for(int a : arr) sb.append(a + " ");
-                sb.append("\n");
-                arr[d-1] = 0;
+            for(int a : arr) {
+                System.out.print(a + " ");
             }
+            System.out.println();
             return;
         }
+        int start = (d == 0) ? 1 : arr[d - 1];
 
-        for(int i = 1; i <= n; i++) {
+        for(int i = start; i <= n; i++) {
             arr[d] = i;
-            if (arr[d] <= i) {
-                dfs(n, m, d+1);
-            }
+            dfs(n, m, d+1);
         }
     }
 }
