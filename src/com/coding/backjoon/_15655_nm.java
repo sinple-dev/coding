@@ -3,10 +3,9 @@ package com.coding.backjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.StringTokenizer;
+import java.util.*;
 
-public class _15653_nm {
+public class _15655_nm {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -24,23 +23,31 @@ public class _15653_nm {
         Arrays.sort(list);
 
         arr = new int[m];
-
         visit = new boolean[n+1];
 
         dfs(n, m, 0);
 
+        for(String s : set) {
+            System.out.println(s);
+        }
+
     }
 
     static int[] list;
+    static Set<String> set = new LinkedHashSet<>();
     static int[] arr;
     static boolean[] visit;
+    static String  str = "";
 
     private static void dfs(int n, int m, int d) {
         if(d == m) {
-            for(int a : arr) {
-                System.out.print(list[a-1] + " ");
+            int[] tmp = arr.clone();
+            Arrays.sort(tmp);
+            str = "";
+            for(int a : tmp) {
+                str += list[a-1] + " ";
             }
-            System.out.println();
+            set.add(str);
             return;
         }
 
