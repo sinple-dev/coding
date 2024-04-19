@@ -3,10 +3,7 @@ package com.coding.backjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class _1260_dfsbfs {
     public static void main(String[] args) throws IOException {
@@ -39,6 +36,10 @@ public class _1260_dfsbfs {
             arr2[b].add(a);
         }
 
+        for (int i = 0; i <= n; i++) {
+            Collections.sort(arr2[i]);
+        }
+
         dfs(arr, visit, v);
         System.out.println();
         bfs(arr2, visit2, v);
@@ -65,12 +66,10 @@ public class _1260_dfsbfs {
             start = queue.poll();
             System.out.print(start + " ");
 
-            Iterator<Integer> iter = arr[start].listIterator();
-            while(iter.hasNext()) {
-                int w = iter.next();
-                if(!visit[w]) {
-                    visit[w] = true;
+            for (int w : arr[start]) {
+                if (!visit[w]) {
                     queue.add(w);
+                    visit[w] = true;
                 }
             }
         }
