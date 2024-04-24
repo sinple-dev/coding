@@ -3,7 +3,7 @@ package com.coding.backjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class _2667_danji {
 
@@ -17,7 +17,6 @@ public class _2667_danji {
 
         map = new int[N][N];
         visited = new boolean[N][N];
-        cnt = new int[10000]; // 최대 10000개의 단지가 존재할 수 있음
 
         for (int i = 0; i < N; i++) {
             String str = br.readLine();
@@ -25,48 +24,48 @@ public class _2667_danji {
                 map[i][j] = str.charAt(j) - '0';
             }
         }
+        List<Integer> list = new ArrayList<>();
 
-        count = 0;
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
                 if (!visited[i][j] && map[i][j] == 1) {
+                    count = 0;
                     dfs(i, j);
-                    count++;
+                    list.add(count);
                 }
             }
         }
 
-        System.out.println(count);
+        System.out.println(list.size());
 
-        for (int i = 1; i <= count; i++) {
-            System.out.println(cnt[i - 1]);
+        Collections.sort(list);
+        for(int num : list) {
+            System.out.println(num);
         }
     }
-
 
     static int N;
     static int[][] map;
     static boolean[][] visited;
-    static int count;
-    static int[] cnt;
+    static int count = 0;
+
+    static int[] dy = {-1, 1, 0, 0};
+    static int[] dx = {0, 0, -1, 1};
 
     public static void dfs(int x, int y) {
         visited[x][y] = true;
-        cnt[count]++;
+        count++;
 
-        for (int dx = -1; dx <= 1; dx++) {
-            for (int dy = -1; dy <= 1; dy++) {
+        for (int i = 0; i < 4; i++) {
+            int nx = x + dx[i];
+            int ny = y + dy[i];
 
-                int nx = x + dx;
-                int ny = y + dy;
+            if (nx < 0 || nx >= N || ny < 0 || ny >= N) {
+                continue;
+            }
 
-                if (nx < 0 || nx >= N || ny < 0 || ny >= N) {
-                    continue;
-                }
-
-                if (!visited[nx][ny] && map[nx][ny] == 1) {
-                    dfs(nx, ny);
-                }
+            if (!visited[nx][ny] && map[nx][ny] == 1) {
+                dfs(nx, ny);
             }
         }
     }
