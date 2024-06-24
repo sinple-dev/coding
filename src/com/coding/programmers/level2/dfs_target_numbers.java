@@ -2,17 +2,15 @@ package com.coding.programmers.level2;
 
 
 public class dfs_target_numbers {
-
-    public static void dfs_target_numbers(String[] args) {
+    public static void main(String[] args) {
 
         dfs_target_numbers main = new dfs_target_numbers();
         int[] numbers = {1,1,1,1,1};
 
-
         System.out.println(main.solution(numbers, 3));
 
-
     }
+
     int answer = 0;
 
     public int solution(int[] numbers, int target) {
