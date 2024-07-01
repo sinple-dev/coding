@@ -23,7 +23,6 @@ public class bfs_game_map {
     }
 
     public void bfs(int[][] maps) {
-
         boolean[][] visited = new boolean[maps.length][maps[0].length];
         Queue<int[]> q = new LinkedList<>();
         int[] cur = {0, 0, 1};
