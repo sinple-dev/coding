@@ -3,7 +3,7 @@ package com.coding.programmers.level3;
 
 public class dp_n_number {
 
-    public static void dfs_n_number(String[] args) {
+    public static void main(String[] args) {
 
         dp_n_number main = new dp_n_number();
         System.out.println(main.solution(5, 12));

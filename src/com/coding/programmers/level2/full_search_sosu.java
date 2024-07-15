@@ -5,9 +5,9 @@ import java.util.HashSet;
 
 public class full_search_sosu {
 
-    public static void full_search_sosu(String[] args) {
+    public static void main(String[] args) {
         full_search_sosu main = new full_search_sosu();
-        main.solution("011");
+        main.solution("17");
     }
 
     boolean[] visited;

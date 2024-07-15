@@ -3,7 +3,7 @@ package com.coding.programmers.level2;
 
 public class bf_pirodo {
 
-    public static void bf_pirodo(String[] args) {
+    public static void main(String[] args) {
 
         bf_pirodo main = new bf_pirodo();
         int[][] dungeons = {{80,20}, {50,40}, {30,10}};

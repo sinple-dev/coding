@@ -3,7 +3,7 @@ package com.coding.programmers.level3;
 
 public class dp_puddles {
 
-    public static void dp_puddles() {
+    public static void main(String[] args) {
         dp_puddles main = new dp_puddles();
         int[][] puddles = {{2, 2}};
 
