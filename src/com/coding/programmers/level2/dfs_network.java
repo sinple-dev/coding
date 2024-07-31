@@ -5,7 +5,7 @@ public class dfs_network {
     public static void main(String[] args) {
 
         dfs_network main = new dfs_network();
-        int[][] computers = {{1,1,0}, {1,1,0}, {0,0,1}};
+        int[][] computers = {{1,1,0}, {1,1,1}, {0,1,1}};
         System.out.println(main.solution(3, computers));
 
     }

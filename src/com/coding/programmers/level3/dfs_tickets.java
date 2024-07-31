@@ -5,7 +5,7 @@ import java.util.Collections;
 
 public class dfs_tickets {
 
-    public static void dfs_tickets() {
+    public static void main(String[] args) {
         dfs_tickets main = new dfs_tickets();
         String[][] people = {{"ICN", "SFO"}, {"ICN", "ATL"}, {"SFO", "ATL"}, {"ATL", "ICN"}, {"ATL","SFO"}};
         main.solution(people);
