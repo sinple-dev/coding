@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class stack_bracket {
 
-    public static void stack_bracket() {
+    public static void main(String[] args) {
         stack_bracket main = new stack_bracket();
         System.out.println(main.solution("()()"));
 

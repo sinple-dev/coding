@@ -5,10 +5,10 @@ import java.util.PriorityQueue;
 
 public class stack_printer {
 
-    public static void stack_printer() {
+    public static void main(String[] args) {
         stack_printer main = new stack_printer();
-        int[] priorities = {2, 1, 3, 2};
-        main.solution(priorities, 2);
+        int[] priorities = {1,3,4,5,1,2};
+        System.out.println(main.solution(priorities, 4));
     }
 
     public int solution(int[] priorities, int location) {
