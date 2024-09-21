@@ -4,7 +4,7 @@ import java.util.PriorityQueue;
 
 public class heap_scoville {
 
-    public static void practice_scoville(String[] args) {
+    public static void main(String[] args) {
         heap_scoville main = new heap_scoville();
         System.out.println(main.solution(new int[]{1, 2, 3, 9, 10, 12}, 7));
     }

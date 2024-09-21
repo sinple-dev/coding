@@ -2,10 +2,10 @@ package com.coding.programmers.level2;
 
 import java.util.Arrays;
 
-public class fullscan_carpet {
+public class bf_carpet {
 
     public static void main(String[] args) {
-        fullscan_carpet main = new fullscan_carpet();
+        bf_carpet main = new bf_carpet();
         System.out.println(Arrays.toString(main.solution(10, 2)));
     }
 

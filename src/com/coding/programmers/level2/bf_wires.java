@@ -2,9 +2,10 @@ package com.coding.programmers.level2;
 
 import java.util.Stack;
 
-public class full_search_wires {
+public class bf_wires {
+
     public static void main(String[] args) {
-        full_search_wires main = new full_search_wires();
+        bf_wires main = new bf_wires();
         int[][] wires = {{1, 3}, {2, 3}, {3, 4}, {4, 5}, {4, 6}, {4, 7}, {7, 8}, {7, 9}};
         main.solution(9, wires);
     }
@@ -54,7 +55,7 @@ public class full_search_wires {
             visit[node] = true;
 
             for (int i = 1; i <= total; i++) {
-                if (visit[i]) continue;
+                  if (visit[i]) continue;
                 if (arr[node][i] == 1) {
                     stack.push(i);
                     cnt++;

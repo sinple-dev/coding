@@ -1,10 +1,7 @@
 package com.coding.backjoon;
 
 import java.io.BufferedWriter;
-import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.util.Collections;
-import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class acm_craft {
