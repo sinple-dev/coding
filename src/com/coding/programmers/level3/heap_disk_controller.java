@@ -3,6 +3,7 @@ package com.coding.programmers.level3;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class heap_disk_controller {
@@ -24,7 +25,7 @@ public class heap_disk_controller {
         int count = 0; // 수행된 요청 갯수
 
         // 원본 배열 오름차순 정렬 (요청시간 오름차순)
-        Arrays.sort(jobs, (o1, o2) -> o1[0] - o2[0]);
+        Arrays.sort(jobs, Comparator.comparingInt(o -> o[0]));
 
         // 처리 시간 오름차순으로 정렬되는 우선순위 큐(Heap)
         PriorityQueue<int[]> pq = new PriorityQueue<>((o1, o2) -> o1[1] - o2[1]);

@@ -1,6 +1,8 @@
 package com.coding.programmers.level2;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class stack_progresses_speeds {
 
@@ -23,21 +25,15 @@ public class stack_progresses_speeds {
             }
             temp[day]++;
         }
-        int count = 0;
-        for (int n : temp) {
-            if (n != 0) {
-                count++;
-            }
-        }
-        int[] answer = new int[count];
-        count = 0; //count 0 초기화
 
+
+        List<Integer> list = new ArrayList<>();
         for (int n : temp) {
             if (n != 0) {
-                answer[count++] = n;
+                list.add(n);
             }
         }
-        return answer;
+        return list.stream().mapToInt(i -> i).toArray();
     }
 
 }
