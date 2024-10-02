@@ -3,15 +3,10 @@ package com.coding.hackerrank.easy;
 import static java.util.stream.Collectors.*;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -37,7 +32,7 @@ public class Diagonal_Difference {
 			}
 		});
 
-		int result = Result.diagonalDifference(arr);
+		int result = Result6.diagonalDifference(arr);
 
 		System.out.println(result);
 
@@ -45,7 +40,7 @@ public class Diagonal_Difference {
 	}
 }
 
-class Result {
+class Result6 {
 
 	/*
 	 * Complete the 'diagonalDifference' function below.
