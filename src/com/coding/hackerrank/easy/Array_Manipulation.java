@@ -1,13 +1,11 @@
-package com.coding.hackerrank;
+package com.coding.hackerrank.easy;
 
 import static java.util.stream.Collectors.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -37,7 +35,7 @@ class Array_Manipulation {
 			}
 		});
 
-		long result = Result5.arrayManipulation(n, queries);
+		long result = Result8.arrayManipulation(n, queries);
 
 		System.out.println(result);
 
@@ -46,7 +44,7 @@ class Array_Manipulation {
 }
 
 
-class Result5 {
+class Result8 {
 
 	public static long arrayManipulation(int n, List<List<Integer>> queries) {
 		// Write your code here

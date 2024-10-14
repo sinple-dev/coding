@@ -1,9 +1,8 @@
-package com.coding.hackerrank;
+package com.coding.hackerrank.easy;
 
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
-import java.util.Stack;
 
 class Java_1D_Array {
 

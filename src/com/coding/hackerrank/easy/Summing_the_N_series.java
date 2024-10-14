@@ -1,14 +1,8 @@
-package com.coding.hackerrank;
+package com.coding.hackerrank.easy;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.math.BigInteger;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
 import java.util.stream.IntStream;
 
 class Summing_the_N_series {
