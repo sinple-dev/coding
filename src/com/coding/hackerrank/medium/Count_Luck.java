@@ -118,7 +118,6 @@ class Result18 {
 			}
 		}
 
-		// 예제중 하나가 해결이 안됨. 모르겠음.
 		return "Oops!";
 	}
 
