@@ -19,26 +19,26 @@ public class bf_wires {
         total = n;
 
         arr = new int[total + 1][total + 1];
-        for (int i = 0; i < wires.length; i++) {
-            arr[wires[i][0]][wires[i][1]] = 1;
-            arr[wires[i][1]][wires[i][0]] = 1;
-        }
+		for (int[] ints : wires) {
+			arr[ints[0]][ints[1]] = 1;
+			arr[ints[1]][ints[0]] = 1;
+		}
 
-        for (int i = 0; i < wires.length; i++) {
+		for (int[] wire : wires) {
 
-            int topA = wires[i][0];
-            int topB = wires[i][1];
+			int topA = wire[0];
+			int topB = wire[1];
 
-            arr[topA][topB] = 0;
-            arr[topB][topA] = 0;
+			arr[topA][topB] = 0;
+			arr[topB][topA] = 0;
 
-            int cnt = dfs(topA);
-            answer = Math.min(answer, Math.abs(total - cnt - cnt));
+			int cnt = dfs(topA);
+			answer = Math.min(answer, Math.abs(total - cnt - cnt));
 
-            arr[topA][topB] = 1;
-            arr[topB][topA] = 1;
+			arr[topA][topB] = 1;
+			arr[topB][topA] = 1;
 
-        }
+		}
         return answer;
     }
 

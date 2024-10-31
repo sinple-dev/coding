@@ -33,7 +33,7 @@ public class bfs_game_map {
             int[] current = q.poll();
 
             if (current[0] == maps.length - 1 && current[1] == maps[0].length - 1) {
-                min = min > current[2] ? current[2] : min;
+                min = Math.min(min, current[2]);
                 return;
             }
 
@@ -52,9 +52,7 @@ public class bfs_game_map {
                 }
             }
         }
-
     }
-
 
 }
 
