@@ -50,11 +50,11 @@ public class bfs_get_item {
 	}
 
 	static void bfs(int characterX, int characterY, int itemX, int itemY) {
-		Queue<int[]> q = new LinkedList<>();
+		Stack<int[]> q = new Stack<>();
 		q.add(new int[] {characterY, characterX, 0}); //x , y , step
 
 		while (!q.isEmpty()) {
-			int[] current = q.poll();
+			int[] current = q.pop();
 			int currentI = current[0];
 			int currentJ = current[1];
 			int currentStep = current[2];

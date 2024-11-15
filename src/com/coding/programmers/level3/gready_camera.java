@@ -9,8 +9,6 @@ public class gready_camera {
 
         int[][] routes = {{-20,-15}, {-14,-5}, {-18,-13}, {-5,-3}};
         System.out.println(main.solution(routes));
-
-
     }
 
     public int solution(int[][] routes) {

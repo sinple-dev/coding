@@ -6,17 +6,38 @@ import java.util.Arrays;
 public class dp_triangle {
 
 
-    public static void dp_triangle(String[] args) {
+    public static void main(String[] args) {
 
-        dp_triangle main = new dp_triangle();
-        int[][] numbers = {{7}, {3, 8}, {8, 1, 0}, {2, 7, 4, 4}, {4, 5, 2, 6, 5}};
 
-        System.out.println(main.solution(numbers));
+        String startDay = "FRI";
+        String[] daysOfWeek = {"MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"};
+
+        for (int i = 0; i < 30; i++) {
+            int dayIndex = (Arrays.asList(daysOfWeek).indexOf(startDay) + i) % 7;
+            String day = daysOfWeek[dayIndex];
+
+            System.out.println(day);
+
+        }
+
+
+
+
+
+
+
+
+        // dp_triangle main = new dp_triangle();
+        // int[][] numbers = {{7}, {3, 8}, {8, 1, 0}, {2, 7, 4, 4}, {4, 5, 2, 6, 5}};
+        //
+        // System.out.println(main.solution(numbers));
 
     }
 
 
+
     public int solution(int[][] triangle) {
+
 
         int[][] dp = new int[triangle.length][triangle.length];
 

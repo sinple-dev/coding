@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class _1003_Fibonacci {
 
-    public static void Fibonacci() throws IOException {
+    public static void main(String[] args) throws IOException {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         Scanner in = new Scanner(System.in);
 
