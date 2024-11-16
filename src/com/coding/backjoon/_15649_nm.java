@@ -10,19 +10,48 @@ public class _15649_nm {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
+        n = Integer.parseInt(st.nextToken());
+        m = Integer.parseInt(st.nextToken());
 
         arr = new int[m];
-        visit = new boolean[n+1];
+        visit = new boolean[n];
 
-        dfs(n, m, 0);
+        // dfs(n, m, 0);
+
+        dfs2(0);
 
         System.out.print(sb);
     }
 
+    static int n;
+    static int m;
     static int[] arr;
     static boolean[] visit;
+
+    static public void dfs2(int index) {
+
+        if (arr.length == index) {
+            for (int a : arr) {
+                System.out.print(a+1 + " ");
+            }
+            System.out.println();
+            return;
+        }
+
+        for (int i = 0; i < n; i++) {
+            if (!visit[i]) {
+                visit[i] = true;
+                arr[index] = i;
+                dfs2(index + 1);
+                visit[i] = false;
+            }
+        }
+    }
+
+
+
+
+
     static StringBuilder sb = new StringBuilder();
 
     private static void dfs(int n, int m, int d) {
@@ -41,4 +70,6 @@ public class _15649_nm {
             }
         }
     }
+
+
 }
