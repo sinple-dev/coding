@@ -42,7 +42,7 @@ public class _1260_dfsbfs {
 
         dfs(arr, visit, v);
         System.out.println();
-        bfs(arr2, visit2, v);
+        bfs(arr, visit2, v);
 
     }
 
@@ -57,7 +57,7 @@ public class _1260_dfsbfs {
         }
     }
 
-    public static void bfs(LinkedList<Integer>[] arr, boolean[] visit, int start) {
+    public static void bfs(int[][] arr, boolean[] visit, int start) {
         Queue<Integer> queue = new LinkedList<>();
         visit[start] = true;
         queue.add(start);
@@ -66,10 +66,10 @@ public class _1260_dfsbfs {
             start = queue.poll();
             System.out.print(start + " ");
 
-            for (int w : arr[start]) {
-                if (!visit[w]) {
-                    queue.add(w);
-                    visit[w] = true;
+            for (int i = 0; i < arr[start].length; i++) {
+                if (arr[start][i] == 1 && !visit[i]) {
+                    queue.add(i);
+                    visit[i] = true;
                 }
             }
         }
